@@ -19,7 +19,7 @@ async function sendMail(sendObject) {
   const info = await transporter.sendMail({
     from: "info@civan-erbay.de",
     to: '"Civan Erbay" <info@civan-erbay.de>',
-    subject: "Neue Anfrage von " + sendObject.name,
+    subject: "Neue Anfrage von " + sendObject.sender,
     text: "Absender: " + sendObject.email + ' Inhalt: ' + sendObject.text,
   });
 
