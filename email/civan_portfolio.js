@@ -19,8 +19,8 @@ async function sendMail(sendObject) {
   const info = await transporter.sendMail({
     from: "info@civan-erbay.de",
     to: '"Civan Erbay" <info@civan-erbay.de>',
-    subject: sendObject.subject,
-    text: "Absender: " + sendObject.sender + ' Inhalt: ' + sendObject.text,
+    subject: "Neue Anfrage von " + sendObject.name,
+    text: "Absender: " + sendObject.email + ' Inhalt: ' + sendObject.text,
   });
 
   console.log("Message sent: %s", info.messageId);
