@@ -26,7 +26,7 @@ app.post("/sendmail", async (req, res) => {
     }
     const mailData = req.body;
     await sendMail(mailData);
-    return res.send("Success", mailData);
+    return res.status(200).send("Success", mailData);
   } catch (error) {
     return res.status(500).send({
       message:
