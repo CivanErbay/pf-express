@@ -19,14 +19,14 @@ app.get("/markus", (req, res) => {
 app.post("/sendmail", async (req, res) => {
   console.log(req.body);
   try {
-    if (!req.body) {
+    /*  if (!req.body) {
       return res.status(400).send({
         message: "Fields can not be empty",
       });
-    }
+    } */
     const mailData = req.body;
     await sendMail(mailData);
-    return res.status(200).send({ mailData });
+    return res.status(200).send({ message: "blub" });
   } catch (error) {
     return res.status(500).send({
       message:
