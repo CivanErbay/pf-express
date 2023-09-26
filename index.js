@@ -12,6 +12,10 @@ app.get("/", (req, res) => {
   res.send("Hier ist Hanna");
 });
 
+app.get("/markus", (req, res) => {
+  res.send("geiler typ");
+});
+
 app.post("/sendmail", async (req, res) => {
   console.log(req.body);
   try {
