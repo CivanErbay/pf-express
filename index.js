@@ -5,16 +5,15 @@ const cors = require("cors");
 
 // Initialize Express
 const app = express();
-
-app.use(express.json());
 app.use(cors());
+app.use(express.json());
 
 // Create GET request
 app.get("/", (req, res) => {
   res.send("Hier ist Hanna");
 });
 
-app.post("/sendmail", async (req, res) => {
+app.post("/sendmail", cors(), async (req, res) => {
   console.log(req.body);
   try {
     if (!req.body) {
