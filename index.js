@@ -6,7 +6,7 @@ const cors = require("cors");
 // Initialize Express
 const app = express();
 /* app.use(cors()); */
-app.use(cors({ origin: ["https://www.civan-erbay.de/"] }));
+app.use(cors({ origin: ["https://www.civan-erbay.de"] }));
 app.use(express.json());
 
 // Create GET request
