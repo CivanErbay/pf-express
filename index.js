@@ -1,11 +1,13 @@
 // Add Express
 const express = require("express");
 const { sendMail } = require("./email/civan_portfolio");
+const cors = require("cors");
 
 // Initialize Express
 const app = express();
 
 app.use(express.json());
+app.use(cors());
 
 // Create GET request
 app.get("/", (req, res) => {
