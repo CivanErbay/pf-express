@@ -2,16 +2,17 @@
 const express = require("express");
 const { sendMail } = require("./email/civan_portfolio");
 const cors = require("cors");
+const helmet = require("helmet");
+
 
 // Initialize Express
 const app = express();
-/* app.use(cors()); */
+app.use(helmet());
 app.use(
   cors({ origin: ["https://www.civan-erbay.de", "http://localhost:5173"] })
 );
 app.use(express.json());
 
-// Create GET request
 app.get("/", (req, res) => {
   res.send("Hier ist Hanna");
 });
@@ -35,10 +36,8 @@ app.post("/sendmail", cors(), async (req, res) => {
   }
 });
 
-// Initialize server
 app.listen(5001, () => {
   console.log("Running on port 5001.");
 });
 
-// Export the Express API
 module.exports = app;
