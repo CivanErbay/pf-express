@@ -14,7 +14,7 @@ app.use(
 app.use(express.json());
 
 app.get("/", (req, res) => {
-  res.send("Hier ist Hanna");
+  res.send("Hier ist Civan");
 });
 
 app.post("/sendmail", cors(), async (req, res) => {
@@ -29,6 +29,7 @@ app.post("/sendmail", cors(), async (req, res) => {
     await sendMail(mailData);
     return res.status(200).send({ message: "success" });
   } catch (error) {
+    console.error("Error occurred:", error);
     return res.status(500).send({
       message:
         error.message || "Some error occurred while creating the listing.",
